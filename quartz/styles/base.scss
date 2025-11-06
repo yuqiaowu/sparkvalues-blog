@@ -611,6 +611,8 @@ ol.overflow {
 blockquote.transclude {
   border-left: none;
   padding-left: 0;
+  /* make transclude body text slightly grayer */
+  color: var(--gray);
 }
 
 blockquote.transclude h1 {
@@ -626,8 +628,28 @@ blockquote.transclude h1 {
 }
 
 blockquote.transclude a.transclude-src {
+  /* button-like appearance for "阅读全文" */
   display: block;
-  text-align: right;
+  width: fit-content;
+  margin-left: auto; /* align to the right */
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  background-color: var(--lightgray);
+  color: var(--dark);
+  border: 1px solid var(--gray);
+  text-decoration: none;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.05s ease-out;
+}
+
+blockquote.transclude a.transclude-src:hover {
+  background-color: var(--secondary);
+  color: var(--light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+blockquote.transclude a.transclude-src:active {
+  transform: translateY(1px);
 }
 
 @media all and ($mobile) {
