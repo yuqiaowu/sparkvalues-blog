@@ -35,7 +35,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Graph(),
     Component.Explorer({
       folderDefaultState: "open",
-      showSnippets: true,
+      showSnippets: false,
     }),
   ],
   right: [
@@ -60,7 +60,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Graph(),
     Component.Explorer({
       folderDefaultState: "open",
-      showSnippets: true,
+      showSnippets: false,
     }),
   ],
   right: [],
