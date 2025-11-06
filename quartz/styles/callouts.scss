@@ -150,7 +150,7 @@
     --callout-icon: var(--callout-icon-fold);
   }
 
-  & > .callout-title-inner > p {
+  & > .callout-title-inner > h1 {
     color: var(--color);
     margin: 0;
   }
@@ -174,10 +174,11 @@
 
   .callout-title-inner {
     font-weight: $semiBoldWeight;
-    /* enlarge callout title text a bit for better prominence */
-    & > p {
-      font-size: 1.2rem;
+    /* style H1 inside callout to look prominent but compact */
+    & > h1.callout-title-text {
+      font-size: 1.75rem;
       line-height: 1.6rem;
+      margin: 0;
     }
   }
 }
