@@ -3,6 +3,8 @@ import { QuartzPluginData } from "../plugins/vfile"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
+// @ts-ignore
+import pageListHotzone from "./scripts/pagelist-hotzone.inline"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
@@ -71,8 +73,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
 
         return (
-          <li class="section-li">
-            <div class="section">
+          <li class="section-li" role="listitem">
+            <div class="section" role="link">
               <p class="meta">
                 {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
               </p>
@@ -111,4 +113,18 @@ PageList.css = `
 .section > .tags {
   margin: 0;
 }
+
+/* make whole list item a clickable hot zone */
+.section-ul .section-li .section {
+  cursor: pointer;
+}
+.section-ul .section-li .section:hover {
+  background-color: var(--lightgray);
+}
+/* keep inner anchors functioning and avoid nested-click interference */
+.section-ul .section-li a {
+  cursor: pointer;
+}
 `
+
+PageList.afterDOMLoaded = pageListHotzone

@@ -94,6 +94,7 @@ function createFileNode(currentSlug: FullSlug, node: FileTrieNode, opts?: Parsed
   const li = clone.querySelector("li") as HTMLLIElement
   const a = li.querySelector("a") as HTMLAnchorElement
   a.href = resolveRelative(currentSlug, node.slug)
+  a.classList.add("internal")
   a.dataset.for = node.slug
   a.textContent = node.displayName
 
@@ -138,7 +139,7 @@ function createFolderNode(
     const a = document.createElement("a")
     a.href = resolveRelative(currentSlug, folderPath)
     a.dataset.for = folderPath
-    a.className = "folder-title"
+    a.className = "folder-title internal"
     a.textContent = node.displayName
     button.replaceWith(a)
   } else {
@@ -236,7 +237,13 @@ async function setupExplorer(currentSlug: FullSlug) {
 
       fragment.appendChild(node)
     }
-    explorerUl.insertBefore(fragment, explorerUl.firstChild)
+    // Preserve overflow sentinel and replace children to avoid duplications
+    const end = explorerUl.querySelector(".overflow-end") as HTMLElement | null
+    if (end) {
+      explorerUl.replaceChildren(fragment, end)
+    } else {
+      explorerUl.replaceChildren(fragment)
+    }
 
     // restore explorer scrollTop position if it exists
     const scrollTop = sessionStorage.getItem("explorerScrollTop")

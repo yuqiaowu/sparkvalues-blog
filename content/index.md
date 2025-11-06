@@ -6,9 +6,17 @@ description: 小火花分享集 ✨
 <style>
 body[data-slug="index"] .featured-title {
   display: inline-flex;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-top: 1.5rem;
+}
+
+/* Ensure anchor with both classes uses 32px on homepage */
+body[data-slug="index"] a.internal.featured-title {
+  font-size: 2rem;
+  font-family: var(--titleFont);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 body[data-slug="index"] blockquote.transclude {

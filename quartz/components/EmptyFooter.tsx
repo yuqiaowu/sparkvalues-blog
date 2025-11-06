@@ -6,3 +6,4 @@ export default (() => {
   }
   return EmptyFooter
 }) satisfies QuartzComponentConstructor
+

@@ -17,3 +17,4 @@ export default (() => {
   CustomFooter.css = style
   return CustomFooter
 }) satisfies QuartzComponentConstructor
+

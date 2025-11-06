@@ -16,12 +16,17 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.TagList(),
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
+    Component.Graph(),
+  ],
+  right: [
     Component.Flex({
       components: [
         {
@@ -32,22 +37,22 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Graph(),
     Component.Explorer({
       folderDefaultState: "open",
       showSnippets: false,
     }),
-  ],
-  right: [
     Component.DesktopOnly(Component.TableOfContents()),
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle()],
   left: [
     Component.MobileOnly(Component.Spacer()),
+    Component.Graph(),
+  ],
+  right: [
     Component.Flex({
       components: [
         {
@@ -55,13 +60,12 @@ export const defaultListPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Graph(),
     Component.Explorer({
       folderDefaultState: "open",
       showSnippets: false,
     }),
   ],
-  right: [],
 }
