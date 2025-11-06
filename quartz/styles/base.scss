@@ -607,6 +607,22 @@ ol.overflow {
   }
 }
 
+/* Transclude style tweaks: remove left bar, enlarge title, align link right */
+blockquote.transclude {
+  border-left: none;
+  padding-left: 0;
+}
+
+blockquote.transclude h1 {
+  /* double the default h1 size (1.75rem -> ~3.5rem) */
+  font-size: 3.5rem;
+}
+
+blockquote.transclude a.transclude-src {
+  display: block;
+  text-align: right;
+}
+
 .katex-display {
   display: initial;
   overflow-x: auto;
