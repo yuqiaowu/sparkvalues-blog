@@ -10,6 +10,7 @@ import { classNames } from "../util/lang"
 
 interface Options {
   title?: string
+  showTitle: boolean
   limit: number
   linkToMore: SimpleSlug | false
   showTags: boolean
@@ -18,6 +19,7 @@ interface Options {
 }
 
 const defaultOptions = (cfg: GlobalConfiguration): Options => ({
+  showTitle: true,
   limit: 3,
   linkToMore: false,
   showTags: true,
@@ -37,11 +39,14 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <div class={classNames(displayClass, "recent-notes")}>
-        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
+        {opts.showTitle && (
+          <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
+        )}
         <ul class="recent-ul">
           {pages.slice(0, opts.limit).map((page) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
             const tags = page.frontmatter?.tags ?? []
+            const summary = page.description
 
             return (
               <li class="recent-li">
@@ -53,6 +58,7 @@ export default ((userOpts?: Partial<Options>) => {
                       </a>
                     </h3>
                   </div>
+                  {summary && <p class="summary">{summary}</p>}
                   {page.dates && (
                     <p class="meta">
                       <Date date={getDate(cfg, page)!} locale={cfg.locale} />

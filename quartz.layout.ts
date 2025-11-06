@@ -5,7 +5,18 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "最近文章",
+        showTitle: false,
+        limit: 5,
+        showTags: true,
+        filter: (f) => f.slug !== "index" && !f.slug?.endsWith("/index") && !f.slug?.startsWith("tags/"),
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+  ],
   footer: Component.EmptyFooter(),
 }
 
