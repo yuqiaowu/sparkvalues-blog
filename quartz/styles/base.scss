@@ -5,7 +5,8 @@
 @use "./callouts.scss";
 
 html {
-  scroll-behavior: smooth;
+  /* 禁用全局平滑滚动，避免导航时出现滚动动画 */
+  scroll-behavior: auto;
   text-size-adjust: none;
   overflow-x: hidden;
   width: 100vw;
