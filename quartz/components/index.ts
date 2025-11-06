@@ -17,6 +17,7 @@ import Backlinks from "./Backlinks"
 import Search from "./Search"
 import Footer from "./Footer"
 import CustomFooter from "./CustomFooter"
+import EmptyFooter from "./EmptyFooter"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
@@ -44,6 +45,7 @@ export {
   Search,
   Footer,
   CustomFooter,
+  EmptyFooter,
   DesktopOnly,
   MobileOnly,
   RecentNotes,
