@@ -614,13 +614,26 @@ blockquote.transclude {
 }
 
 blockquote.transclude h1 {
-  /* double the default h1 size (1.75rem -> ~3.5rem) */
-  font-size: 3.5rem;
+  /* make transclude title a prominent badge */
+  font-size: 4rem;
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  border-radius: 0.6em;
+  background-color: var(--secondary);
+  color: var(--light);
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 blockquote.transclude a.transclude-src {
   display: block;
   text-align: right;
+}
+
+@media all and ($mobile) {
+  blockquote.transclude h1 {
+    font-size: 3rem;
+  }
 }
 
 .katex-display {
