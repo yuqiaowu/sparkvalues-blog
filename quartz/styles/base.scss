@@ -643,14 +643,11 @@ blockquote.transclude a.transclude-src {
 }
 
 blockquote.transclude a.transclude-src:hover {
+  /* on hover, only change the button background color */
   background-color: var(--secondary);
-  color: var(--light);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-blockquote.transclude a.transclude-src:active {
-  transform: translateY(1px);
-}
+/* remove active press effect */
 
 @media all and ($mobile) {
   blockquote.transclude h1 {
