@@ -615,6 +615,11 @@ blockquote.transclude {
   color: var(--gray);
 }
 
+/* reduce opacity for transclude body content, keep title and button full */
+blockquote.transclude > *:not(h1):not(a.transclude-src) {
+  opacity: 0.6;
+}
+
 blockquote.transclude h1 {
   /* make transclude title a prominent badge */
   font-size: 4rem;
