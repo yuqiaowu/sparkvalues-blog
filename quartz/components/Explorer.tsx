@@ -16,6 +16,8 @@ export interface Options {
   folderDefaultState: "collapsed" | "open"
   folderClickBehavior: "collapse" | "link"
   useSavedState: boolean
+  // Whether to show a short text snippet under file items
+  showSnippets?: boolean
   sortFn: (a: FileTrieNode, b: FileTrieNode) => number
   filterFn: (node: FileTrieNode) => boolean
   mapFn: (node: FileTrieNode) => void
@@ -69,6 +71,7 @@ export default ((userOpts?: Partial<Options>) => {
         data-behavior={opts.folderClickBehavior}
         data-collapsed={opts.folderDefaultState}
         data-savestate={opts.useSavedState}
+        data-snippets={opts.showSnippets ? true : false}
         data-data-fns={JSON.stringify({
           order: opts.order,
           sortFn: opts.sortFn.toString(),
@@ -125,6 +128,7 @@ export default ((userOpts?: Partial<Options>) => {
         <template id="template-file">
           <li>
             <a href="#"></a>
+            <div class="file-snippet"></div>
           </li>
         </template>
         <template id="template-folder">

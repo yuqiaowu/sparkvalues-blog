@@ -33,7 +33,10 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Graph(),
-    Component.Explorer(),
+    Component.Explorer({
+      folderDefaultState: "open",
+      showSnippets: true,
+    }),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -56,7 +59,10 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Graph(),
-    Component.Explorer(),
+    Component.Explorer({
+      folderDefaultState: "open",
+      showSnippets: true,
+    }),
   ],
   right: [],
 }

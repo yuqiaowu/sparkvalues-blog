@@ -53,6 +53,13 @@ type NodeRenderData = GraphicsInfo & {
 }
 
 const localStorageKey = "graph-visited"
+// Fallback: if global `fetchData` is not injected, fetch contentIndex.json directly
+async function getFetchData(): Promise<Record<FullSlug, ContentDetails>> {
+  const globalFetchData = (globalThis as any).fetchData as Promise<Record<FullSlug, ContentDetails>> | undefined
+  if (globalFetchData) return await globalFetchData
+  const url = new URL("./static/contentIndex.json", window.location.href)
+  return fetch(url.toString()).then((r) => r.json())
+}
 function getVisited(): Set<SimpleSlug> {
   return new Set(JSON.parse(localStorage.getItem(localStorageKey) ?? "[]"))
 }
@@ -90,7 +97,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   } = JSON.parse(graph.dataset["cfg"]!) as D3Config
 
   const data: Map<SimpleSlug, ContentDetails> = new Map(
-    Object.entries<ContentDetails>(await fetchData).map(([k, v]) => [
+    Object.entries<ContentDetails>(await getFetchData()).map(([k, v]) => [
       simplifySlug(k as FullSlug),
       v,
     ]),

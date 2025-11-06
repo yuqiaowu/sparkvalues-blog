@@ -8,6 +8,7 @@ interface ParsedOptions {
   folderClickBehavior: "collapse" | "link"
   folderDefaultState: "collapsed" | "open"
   useSavedState: boolean
+  showSnippets: boolean
   sortFn: (a: FileTrieNode, b: FileTrieNode) => number
   filterFn: (node: FileTrieNode) => boolean
   mapFn: (node: FileTrieNode) => void
@@ -17,6 +18,14 @@ interface ParsedOptions {
 type FolderState = {
   path: string
   collapsed: boolean
+}
+
+// Fallback: if global `fetchData` is not injected, fetch contentIndex.json directly
+async function getFetchData(): Promise<Record<FullSlug, ContentDetails>> {
+  const globalFetchData = (globalThis as any).fetchData as Promise<Record<FullSlug, ContentDetails>> | undefined
+  if (globalFetchData) return await globalFetchData
+  const url = new URL("./static/contentIndex.json", window.location.href)
+  return fetch(url.toString()).then((r) => r.json())
 }
 
 let currentExplorerState: Array<FolderState>
@@ -79,7 +88,7 @@ function toggleFolder(evt: MouseEvent) {
   localStorage.setItem("fileTree", stringifiedFileTree)
 }
 
-function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElement {
+function createFileNode(currentSlug: FullSlug, node: FileTrieNode, opts?: ParsedOptions): HTMLLIElement {
   const template = document.getElementById("template-file") as HTMLTemplateElement
   const clone = template.content.cloneNode(true) as DocumentFragment
   const li = clone.querySelector("li") as HTMLLIElement
@@ -87,6 +96,18 @@ function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElemen
   a.href = resolveRelative(currentSlug, node.slug)
   a.dataset.for = node.slug
   a.textContent = node.displayName
+
+  // render content snippet if enabled and available
+  const snippetEl = li.querySelector(".file-snippet") as HTMLElement | null
+  if (opts?.showSnippets && snippetEl && node.data && (node.data as any).content) {
+    const raw = (node.data as any).content as string
+    // simple excerpt: first 100 chars, trimmed
+    const excerpt = raw.replace(/\s+/g, " ").trim().slice(0, 100)
+    snippetEl.textContent = excerpt.length < raw.length ? `${excerpt}…` : excerpt
+  } else if (snippetEl) {
+    // remove empty snippet container if not used
+    snippetEl.remove()
+  }
 
   if (currentSlug === node.slug) {
     a.classList.add("active")
@@ -159,6 +180,7 @@ async function setupExplorer(currentSlug: FullSlug) {
       folderClickBehavior: (explorer.dataset.behavior || "collapse") as "collapse" | "link",
       folderDefaultState: (explorer.dataset.collapsed || "collapsed") as "collapsed" | "open",
       useSavedState: explorer.dataset.savestate === "true",
+      showSnippets: explorer.dataset.snippets === "true",
       order: dataFns.order || ["filter", "map", "sort"],
       sortFn: new Function("return " + (dataFns.sortFn || "undefined"))(),
       filterFn: new Function("return " + (dataFns.filterFn || "undefined"))(),
@@ -172,7 +194,7 @@ async function setupExplorer(currentSlug: FullSlug) {
       serializedExplorerState.map((entry: FolderState) => [entry.path, entry.collapsed]),
     )
 
-    const data = await fetchData
+    const data = await getFetchData()
     const entries = [...Object.entries(data)] as [FullSlug, ContentDetails][]
     const trie = FileTrieNode.fromEntries(entries)
 
@@ -210,7 +232,7 @@ async function setupExplorer(currentSlug: FullSlug) {
     for (const child of trie.children) {
       const node = child.isFolder
         ? createFolderNode(currentSlug, child, opts)
-        : createFileNode(currentSlug, child)
+        : createFileNode(currentSlug, child, opts)
 
       fragment.appendChild(node)
     }

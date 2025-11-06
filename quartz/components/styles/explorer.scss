@@ -130,6 +130,15 @@ button.desktop-explorer {
         color: var(--tertiary);
       }
     }
+
+    // small text preview under file entries
+    & li > .file-snippet {
+      margin-top: 2px;
+      color: var(--darkgray);
+      font-size: 0.85rem;
+      line-height: 1.2rem;
+      opacity: 0.8;
+    }
   }
 
   .folder-outer {

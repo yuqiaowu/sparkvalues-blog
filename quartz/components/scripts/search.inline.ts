@@ -494,9 +494,16 @@ async function fillDocument(data: ContentIndex) {
 
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
-  const data = await fetchData
+  const data = await getFetchData()
   const searchElement = document.getElementsByClassName("search")
   for (const element of searchElement) {
     await setupSearch(element, currentSlug, data)
   }
 })
+  // Fallback: if global `fetchData` is not injected, fetch contentIndex.json directly
+  async function getFetchData(): Promise<Record<FullSlug, ContentDetails>> {
+    const globalFetchData = (globalThis as any).fetchData as Promise<Record<FullSlug, ContentDetails>> | undefined
+    if (globalFetchData) return await globalFetchData
+    const url = new URL("./static/contentIndex.json", window.location.href)
+    return fetch(url.toString()).then((r) => r.json())
+  }
