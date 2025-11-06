@@ -174,5 +174,10 @@
 
   .callout-title-inner {
     font-weight: $semiBoldWeight;
+    /* enlarge callout title text a bit for better prominence */
+    & > p {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
   }
 }
