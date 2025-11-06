@@ -108,9 +108,11 @@ async function _navigate(url: URL, isBack: boolean = false) {
   if (!isBack) {
     if (url.hash) {
       const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-      el?.scrollIntoView()
+      // disable smooth scrolling during navigation to avoid visible bounce
+      el?.scrollIntoView({ behavior: "auto" })
     } else {
-      window.scrollTo({ top: 0 })
+      // disable smooth scrolling during navigation to avoid visible bounce
+      window.scrollTo({ top: 0, behavior: "auto" })
     }
   }
 
@@ -155,7 +157,8 @@ function createRouter() {
 
       if (isSamePage(url) && url.hash) {
         const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-        el?.scrollIntoView()
+        // when navigating within the same page via hash, scroll instantly
+        el?.scrollIntoView({ behavior: "auto" })
         history.pushState({}, "", url)
         return
       }
