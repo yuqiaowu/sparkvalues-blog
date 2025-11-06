@@ -645,6 +645,8 @@ blockquote.transclude a.transclude-src {
 blockquote.transclude a.transclude-src:hover {
   /* on hover, only change the button background color */
   background-color: var(--secondary);
+  /* keep text color unchanged on hover */
+  color: var(--dark);
 }
 
 /* remove active press effect */
