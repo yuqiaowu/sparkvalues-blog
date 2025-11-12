@@ -4,7 +4,10 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [
+    // 顶部分类导航
+    Component.Nav(),
+  ],
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({
@@ -16,20 +19,23 @@ export const sharedPageComponents: SharedLayout = {
       }),
       condition: (page) => page.fileData.slug === "index",
     }),
-    // 全站启用评论（可用 frontmatter comments: false 逐篇关闭）
-    Component.Comments({
-      provider: "giscus",
-      options: {
-        repo: (process.env.GISCUS_REPO ?? "yuqiaowu/sparkvalues-blog") as `${string}/${string}`,
-        repoId: process.env.GISCUS_REPO_ID ?? "",
-        category: process.env.GISCUS_CATEGORY ?? "Announcements",
-        categoryId: process.env.GISCUS_CATEGORY_ID ?? "",
-        lang: process.env.GISCUS_LANG ?? "zh-CN",
-        mapping: "pathname",
-        inputPosition: "top",
-        reactionsEnabled: true,
-        strict: false,
-      },
+    // 评论：首页隐藏，其它页面显示（也可通过 frontmatter comments: false 逐篇关闭）
+    Component.ConditionalRender({
+      component: Component.Comments({
+        provider: "giscus",
+        options: {
+          repo: (process.env.GISCUS_REPO ?? "yuqiaowu/sparkvalues-blog") as `${string}/${string}`,
+          repoId: process.env.GISCUS_REPO_ID ?? "",
+          category: process.env.GISCUS_CATEGORY ?? "Announcements",
+          categoryId: process.env.GISCUS_CATEGORY_ID ?? "",
+          lang: process.env.GISCUS_LANG ?? "zh-CN",
+          mapping: "pathname",
+          inputPosition: "top",
+          reactionsEnabled: true,
+          strict: false,
+        },
+      }),
+      condition: (page) => page.fileData.slug !== "index",
     }),
   ],
   footer: Component.EmptyFooter(),
@@ -50,7 +56,11 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
-    Component.Graph(),
+    // 首页隐藏图谱
+    Component.ConditionalRender({
+      component: Component.Graph(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   right: [
     Component.Flex({
@@ -76,7 +86,11 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle()],
   left: [
     Component.MobileOnly(Component.Spacer()),
-    Component.Graph(),
+    // 列表页通常不是首页，这里保持与内容页一致的条件逻辑
+    Component.ConditionalRender({
+      component: Component.Graph(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   right: [
     Component.Flex({
