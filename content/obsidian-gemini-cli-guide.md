@@ -9,9 +9,7 @@ tags: [Obsidian, Gemini, CLI, 教程]
 最近，又刚好看到了苍河老师写了一篇知识整合的文章：[Gemini Cli + Obsidian 才是知识管理的神！！](https://mp.weixin.qq.com/s/f5HWooI1a8pnSObJ9rSqMw)他尝试将 Google 的 Gemini CLI 集成到 Obsidian 中，打造了一个**免费且轻量**的本地 AI 笔记助手”。
 
 我按照他的指南实践了整个过程，非常有成就感，但也踩了不少坑。先来看下安装好后，我在obsidian 里是如何和gemini 共创，为知识类文章添加细节的。
-![[Obsidian Vault/blog/content/obsidian-gemini-cli-guide/ScreenFlow.mp4]]
-
-现在我将我的实践经验、特别是关于**国内网络环境下的代理设置**和**终端环境配置**的细节，整理成这篇完整的指南，如果你也遇到了类似的问题，希望这篇文章可以启发到你。
+![[ScreenFlow.mp4]]现在我将我的实践经验、特别是关于**国内网络环境下的代理设置**和**终端环境配置**的细节，整理成这篇完整的指南，如果你也遇到了类似的问题，希望这篇文章可以启发到你。
 
 ---
 
@@ -37,7 +35,7 @@ tags: [Obsidian, Gemini, CLI, 教程]
 **1. 开启 TUN 模式**
 在 Clash Verge 的“系统设置”中，开启“虚拟网卡模式 (TUN)”。建议使用 `GVisor` 作为堆栈，并开启“自动设置全局路由”。
 ![[1.png]]
-![[Obsidian Vault/blog/content/obsidian-gemini-cli-guide/wechat_2025-11-12_214844_386.png]]
+![[2.png]]
 
 **2. 验证代理是否生效**
 开启后，在系统终端输入 `curl -I https://ipinfo.io`。如果返回的 `country` 是你代理节点的国家（如 `SG`、`US`），则证明终端流量已成功被代理。
