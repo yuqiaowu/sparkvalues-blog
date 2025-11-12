@@ -5,8 +5,7 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [
-    // 顶部分类导航
-    Component.Nav(),
+    // 顶部分类导航已移除
   ],
   afterBody: [
     Component.ConditionalRender({

@@ -25,7 +25,6 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
-import Nav from "./Nav"
 
 export {
   ArticleTitle,
@@ -55,5 +54,4 @@ export {
   Comments,
   Flex,
   ConditionalRender,
-  Nav,
 }
