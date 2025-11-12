@@ -20,7 +20,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.Comments({
       provider: "giscus",
       options: {
-        repo: process.env.GISCUS_REPO ?? "yuqiaowu/sparkvalues-blog",
+        repo: (process.env.GISCUS_REPO ?? "yuqiaowu/sparkvalues-blog") as `${string}/${string}`,
         repoId: process.env.GISCUS_REPO_ID ?? "",
         category: process.env.GISCUS_CATEGORY ?? "Announcements",
         categoryId: process.env.GISCUS_CATEGORY_ID ?? "",
