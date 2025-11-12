@@ -1,5 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { resolveRelative } from "../util/path"
+import { resolveRelative, joinSegments, slugTag, FullSlug } from "../util/path"
 
 const navCss = `
 .top-nav {
@@ -20,9 +20,12 @@ const navCss = `
 
 export default (() => {
   const Nav: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
-    const current = fileData.slug!
-    const web3Href = resolveRelative(current, "/tags/web3")
-    const aiHref = resolveRelative(current, "/tags/AI-知识库")
+    const current = fileData.slug! as FullSlug
+    // 生成符合类型的标签页 slug（不能以 / 开头）
+    const web3Slug = joinSegments("tags", slugTag("web3")) as FullSlug
+    const aiSlug = joinSegments("tags", slugTag("AI 知识库")) as FullSlug
+    const web3Href = resolveRelative(current, web3Slug)
+    const aiHref = resolveRelative(current, aiSlug)
 
     return (
       <nav class="top-nav">
