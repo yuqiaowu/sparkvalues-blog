@@ -16,6 +16,17 @@ export const sharedPageComponents: SharedLayout = {
       }),
       condition: (page) => page.fileData.slug === "index",
     }),
+    // 全站启用评论（可用 frontmatter comments: false 逐篇关闭）
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: process.env.GISCUS_REPO ?? "yuqiaowu/sparkvalues-blog",
+        repoId: process.env.GISCUS_REPO_ID ?? "",
+        category: process.env.GISCUS_CATEGORY ?? "Announcements",
+        categoryId: process.env.GISCUS_CATEGORY_ID ?? "",
+        lang: process.env.GISCUS_LANG ?? "zh-CN",
+      },
+    }),
   ],
   footer: Component.EmptyFooter(),
 }
