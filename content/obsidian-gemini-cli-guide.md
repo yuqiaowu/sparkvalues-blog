@@ -9,7 +9,7 @@ tags: [Obsidian, Gemini, CLI, 教程]
 最近，又刚好看到了苍河老师写了一篇知识整合的文章：[Gemini Cli + Obsidian 才是知识管理的神！！](https://mp.weixin.qq.com/s/f5HWooI1a8pnSObJ9rSqMw)他尝试将 Google 的 Gemini CLI 集成到 Obsidian 中，打造了一个**免费且轻量**的本地 AI 笔记助手”。
 
 我按照他的指南实践了整个过程，非常有成就感，但也踩了不少坑。先来看下安装好后，我在obsidian 里是如何和gemini 共创，为知识类文章添加细节的。
-![[obsidian-gemini-cli-guide/ScreenFlow.mp4]]
+<video src="/obsidian-gemini-cli-guide/ScreenFlow.mp4" controls></video>
 
 现在我将我的实践经验、特别是关于**国内网络环境下的代理设置**和**终端环境配置**的细节，整理成这篇完整的指南，如果你也遇到了类似的问题，希望这篇文章可以启发到你。
 
@@ -36,9 +36,9 @@ tags: [Obsidian, Gemini, CLI, 教程]
 
 **1. 开启 TUN 模式**
 在 Clash Verge 的“系统设置”中，开启“虚拟网卡模式 (TUN)”。建议使用 `GVisor` 作为堆栈，并开启“自动设置全局路由”。
-![[obsidian-gemini-cli-guide/Pasted image 20251112034649.png]]
-![[obsidian-gemini-cli-guide/Pasted image 20251112034404.png]]
-![[obsidian-gemini-cli-guide/Pasted image 20251112025751.png]]
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112034649.png)
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112034404.png)
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112025751.png)
 **2. 验证代理是否生效**
 开启后，在系统终端输入 `curl -I https://ipinfo.io`。如果返回的 `country` 是你代理节点的国家（如 `SG`、`US`），则证明终端流量已成功被代理。
 > **注意**：有时开启后 IP 不会立即改变，可以尝试重启几次代理工具。
@@ -108,7 +108,7 @@ nano ~/.zshrc
 export GEMINI_API_KEY="替换成你的真实API Key"
 ```
 添加完成后，记得保存文件，然后运行 `source ~/.zshrc` 使其生效。
-![[obsidian-gemini-cli-guide/Pasted image 20251112040302.png]]
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112040302.png)
 
 ### 方案 B：在 `.zshrc` 中手动写入代理 (适用于 ClashX 等)
 
@@ -170,9 +170,9 @@ alias gemini="/usr/local/bin/gemini"
     *   **Shell path**: `/bin/zsh`
     *   参数里前置添加: `-l` (注意是小写的 L，不是数字 1)
     *   **终端环境 (Profile)**: 选择 `darwinIntegratedDefault`
-![[obsidian-gemini-cli-guide/Pasted image 20251112170256.png]]
-![[obsidian-gemini-cli-guide/Pasted image 20251112170901.png]]
-![[obsidian-gemini-cli-guide/Pasted image 20251112171914.png]]
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112170256.png)
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112170901.png)
+![](/obsidian-gemini-cli-guide/Pasted-image-20251112171914.png)
 **为什么要这样设置？**
 - `darwinIntegratedDefault` 指的是使用系统默认的终端配置，它会自动加载 `.zshrc` 文件。
 - `-l` 参数会以 login shell 的模式启动，确保所有环境变量（如 API Key、代理、PATH）都被正确载入。
