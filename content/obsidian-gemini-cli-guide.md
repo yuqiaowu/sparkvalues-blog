@@ -1,7 +1,11 @@
 ---
 title: Obsidian + Gemini CLI：一次配置，永久丝滑的本地 AI 共创知识库搭建指南
 permalink: obsidian-gemini-cli-guide
-tags: [Obsidian, Gemini, CLI, 教程]
+tags:
+  - Obsidian
+  - Gemini
+  - CLI
+  - 教程
 ---
 
 我一直想找一个轻量、灵活、能本地电脑+手机使用又能轻松发布成线上网站的开源笔记工具，Obsidian完美符合我的需求。
@@ -36,7 +40,7 @@ tags: [Obsidian, Gemini, CLI, 教程]
 在 Clash Verge 的“系统设置”中，开启“虚拟网卡模式 (TUN)”。建议使用 `GVisor` 作为堆栈，并开启“自动设置全局路由”。
 ![[1.png]]
 ![[2.png]]
-
+![[3.png]]
 **2. 验证代理是否生效**
 开启后，在系统终端输入 `curl -I https://ipinfo.io`。如果返回的 `country` 是你代理节点的国家（如 `SG`、`US`），则证明终端流量已成功被代理。
 > **注意**：有时开启后 IP 不会立即改变，可以尝试重启几次代理工具。
@@ -53,6 +57,7 @@ tags: [Obsidian, Gemini, CLI, 教程]
 ```bash
 open -e ~/.zshrc
 ```
+![[7.png]]
 - **工作原理**：这个命令会使用 macOS 自带的 **TextEdit (文本编辑)** 应用打开 `.zshrc` 文件，就像打开一个普通的 `.txt` 文档一样。
 - **如何保存**：修改完成后，直接按键盘上的 `Command + S` 快捷键保存，然后关闭窗口即可。
 
@@ -155,7 +160,7 @@ npm install -g @google/gemini-cli
 # 在 ~/.zshrc 文件中添加
 alias gemini="/usr/local/bin/gemini"
 ```
-*小提示：不知道如何编辑 `.zshrc`？在终端输入 `open -e ~/.zshrc` 即可用文本编辑器打开。*
+最后的效果：![[8.png]]
 
 ---
 
@@ -164,13 +169,14 @@ alias gemini="/usr/local/bin/gemini"
 最后一步，是确保 Obsidian 内的终端能正确加载我们刚刚的所有配置。
 
 1.  打开 Obsidian **设置 → 第三方插件 → 搜索并安装Terminal**。
+![[4.png]]
 2.  在配置选项中，进行如下设置：
     *   **Shell path**: `/bin/zsh`
     *   参数里前置添加: `-l` (注意是小写的 L，不是数字 1)
     *   **终端环境 (Profile)**: 选择 `darwinIntegratedDefault`
-![](/obsidian-gemini-cli-guide/Pasted-image-20251112170256.png)
-![](/obsidian-gemini-cli-guide/Pasted-image-20251112170901.png)
-![](/obsidian-gemini-cli-guide/Pasted-image-20251112171914.png)
+
+![[5.png]]
+![[6.png]]
 **为什么要这样设置？**
 - `darwinIntegratedDefault` 指的是使用系统默认的终端配置，它会自动加载 `.zshrc` 文件。
 - `-l` 参数会以 login shell 的模式启动，确保所有环境变量（如 API Key、代理、PATH）都被正确载入。
