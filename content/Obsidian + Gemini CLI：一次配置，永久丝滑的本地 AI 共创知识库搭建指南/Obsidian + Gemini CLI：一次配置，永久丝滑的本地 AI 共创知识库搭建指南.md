@@ -1,3 +1,9 @@
+---
+title: Obsidian + Gemini CLI：一次配置，永久丝滑的本地 AI 共创知识库搭建指南
+permalink: obsidian-gemini-cli-guide
+tags: [Obsidian, Gemini, CLI, 教程]
+---
+
 我一直想找一个轻量、灵活、能本地电脑+手机使用又能轻松发布成线上网站的开源笔记工具，Obsidian完美符合我的需求。
 
 最近，又刚好看到了苍河老师写了一篇知识整合的文章：[Gemini Cli + Obsidian 才是知识管理的神！！](https://mp.weixin.qq.com/s/f5HWooI1a8pnSObJ9rSqMw)他尝试将 Google 的 Gemini CLI 集成到 Obsidian 中，打造了一个**免费且轻量**的本地 AI 笔记助手”。
