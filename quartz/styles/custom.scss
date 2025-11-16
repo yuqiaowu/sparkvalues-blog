@@ -1,3 +1,49 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+.recent-notes {
+  margin-top: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(132, 165, 157, 0.12), rgba(250, 248, 248, 0.9));
+  border: 1px solid color-mix(in srgb, var(--lightgray) 60%, rgba(40, 75, 99, 0.2));
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+}
+
+.recent-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.recent-li .section {
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  border: 1px solid rgba(40, 75, 99, 0.08);
+  background: #fff;
+  transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(40, 75, 99, 0.35);
+    box-shadow: 0 20px 35px rgba(40, 75, 99, 0.08);
+  }
+}
+
+.recent-li .summary {
+  margin: 0.6rem 0 0;
+  color: color-mix(in srgb, var(--darkgray) 85%, rgba(0, 0, 0, 0.2));
+}
+
+.recent-li .meta {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

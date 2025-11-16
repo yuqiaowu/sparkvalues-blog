@@ -10,9 +10,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({
-        title: "最近文章",
-        showTitle: false,
-        limit: 5,
+        title: "最新发布",
+        showTitle: true,
+        limit: 4,
         showTags: true,
         filter: (f) => f.slug !== "index" && !f.slug?.endsWith("/index") && !f.slug?.startsWith("tags/"),
       }),
@@ -44,6 +44,10 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
+      component: Component.HomeHero(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
@@ -51,7 +55,10 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.ArticleTitle(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
