@@ -8,6 +8,8 @@ export const sharedPageComponents: SharedLayout = {
     // 顶部分类导航已移除
   ],
   afterBody: [
+    // Vercel Web Analytics（全局启用，放置在 body 末尾）
+    Component.VercelAnalytics(),
     Component.ConditionalRender({
       component: Component.RecentNotes({
         title: "最近文章",
