@@ -1,14 +1,3 @@
-title: 加密货币交易系统DATA——附github开源地址
-permalink: obsidian-gemini-cli-guide
-tags:
-  - Obsidian
-  - Gemini
-  - CLI
-  - 教程
-  - AI知识库
----
-
-
 ---
 title: "加密货币交易系统DATA"
 date: 2025-12-17T17:30:00+08:00
