@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek × Qlib 实战：我开发了一个“绝不上头”的AI交易员DATA"
+title: DeepSeek × Qlib 实战：我开发了一个“绝不上头”的AI交易员DATA——附github地址
 date: 2025-12-17T17:30:00+08:00
 tags:
   - AI
@@ -8,6 +8,7 @@ tags:
   - System_Design
 permalink: /posts/crypto-trading-system-data/
 ---
+项目体验地址：[[agent.sparkvalues.com]]
 ## <span style="color: #FF7F00;">散户交易者的痛点</span>
 
 在研究交易的过程中，我发现散户真正想要的是长期可复现，能够让人安心拿住/卖出的alpha
