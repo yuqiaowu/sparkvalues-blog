@@ -8,7 +8,9 @@ tags:
   - System_Design
 permalink: /posts/crypto-trading-system-data/
 ---
-项目体验地址：[[agent.sparkvalues.com]]
+
+
+项目体验地址：[agent.sparkvalues.com](https://agent.sparkvalues.com)
 ## <span style="color: #FF7F00;">散户交易者的痛点</span>
 
 在研究交易的过程中，我发现散户真正想要的是长期可复现，能够让人安心拿住/卖出的alpha
@@ -122,7 +124,9 @@ permalink: /posts/crypto-trading-system-data/
   
   未来，该系统计划通过引入模型反思、社区订阅和API交易分润等功能，持续迭代并走向成熟，最终为用户提供一个如《星际迷航》中“DATA”般可靠、高效的智能交易伙伴。
 
-  最后附上项目开源github地址：[[https://github.com/yuqiaowu/ai-crypto-agent.git]]
+  最后附上项目开源github地址：[https://github.com/yuqiaowu/ai-crypto-agent](https://github.com/yuqiaowu/ai-crypto-agent.git)
+
+ 
 
   欢迎大家一起建设，共同完善。
 
