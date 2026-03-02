@@ -45,17 +45,18 @@ Profile.css = `
 .profile-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1rem 0;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0;
   background: transparent;
 }
 
 .profile-avatar {
   width: 100%;
-  max-width: 180px;
-  margin-bottom: 1rem;
+  max-width: 160px;
+  margin-bottom: 1.2rem;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .profile-avatar img {
@@ -74,14 +75,14 @@ Profile.css = `
 
 .profile-bio {
   font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--gray);
-  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--dark);
+  margin: 0 0 1.2rem 0;
 }
 
 .profile-contact {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
 }
 
