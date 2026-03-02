@@ -48,8 +48,10 @@ permalink: /posts/web3-wallet-comparison-review/
 > 助记词是不能改的对吗？如果助记词暴露了，要怎么处理呢？把这个钱包里的钱转移到安全的钱包，再把这个钱包删掉？
 
 可以再次查看助记词，但是要通过：
-![[Pasted image 20260302115358.png|573]] ![[Pasted image 20260302115430.png|579]]
-![[Pasted image 20260302003319.png]] ![[Pasted image 20260302003355.png]]
+![[Pasted image 20260302115358.png|573]] 
+![[Pasted image 20260302115430.png|579]]
+![[Pasted image 20260302003319.png]] 
+![[Pasted image 20260302003355.png]]
 ![[Pasted image 20260302010409.png]]
 
 感觉颇为繁琐啊，但是也是反诈的必要步骤吧。答完题还要继续输入密码，真是密码恐惧症了：
@@ -72,14 +74,15 @@ permalink: /posts/web3-wallet-comparison-review/
 
 > [!warning] 交互槽点
 * 很诡异的是按了之后又冒出来一个白色的界面，但是内容是一模一样的，又要再点一遍（有可能是 Bug?）。
-    ![[Pasted image 20260301000640.png]]
+![[Pasted image 20260301000640.png]]
 * 生物识别还要选择类型，期间跳了很多遍弹窗，让我有点懵逼。
 
 > [!info] 背后逻辑
 > 发现它可能第一次是确认使用 Google 来创建通行密码，第二次是 Google 要确认通过创建密码指纹来登录浏览器扩展。
 
 ![[Pasted image 20260301003022.png]]
-![[Pasted image 20260301002418.png]] ![[Pasted image 20260301002714.png]]
+![[Pasted image 20260301002418.png]] 
+![[Pasted image 20260301002714.png]]
 ![[Pasted image 20260301235047.png]]
 
 记录助记词和确认助记词是放在整个注册流程中的，虽然也可以跳过，但是“备份助记词”这个按钮太显眼了。
@@ -129,7 +132,8 @@ OK，终于可以看到钱包的界面了。
 ![[Pasted image 20260302130600.png]]
 
 直接可以看到所有的助记词，不像 OKX 需要点一个看一个。
-![[Pasted image 20260302131036.png]] ![[Pasted image 20260302132234.png]]
+![[Pasted image 20260302131036.png]] 
+![[Pasted image 20260302132234.png]]
 
 同样的有一个庆祝动效页面：
 ![[Pasted image 20260302132353.png]]
