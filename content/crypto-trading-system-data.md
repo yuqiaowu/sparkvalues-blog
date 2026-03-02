@@ -8,8 +8,6 @@ tags:
   - System_Design
 permalink: /posts/crypto-trading-system-data/
 ---
-
-
 项目体验地址：[agent.sparkvalues.com](https://agent.sparkvalues.com)
 ## <span style="color: #FF7F00;">散户交易者的痛点</span>
 

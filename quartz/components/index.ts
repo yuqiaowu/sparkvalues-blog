@@ -25,7 +25,9 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import Profile from "./Profile"
 import VercelAnalytics from "./VercelAnalytics"
+
 
 export {
   ArticleTitle,
@@ -55,5 +57,7 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  Profile,
   VercelAnalytics,
+
 }

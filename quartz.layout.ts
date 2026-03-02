@@ -57,6 +57,11 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
+    // 首页显示 Profile 模块
+    Component.ConditionalRender({
+      component: Component.Profile(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     // 首页隐藏图谱
     Component.ConditionalRender({
       component: Component.Graph(),
