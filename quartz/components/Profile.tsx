@@ -61,19 +61,17 @@ Profile.css = `
 .profile-avatar {
   width: 100%;
   max-width: 180px;
-  height: auto;
-  aspect-ratio: 1/1;
-  border-radius: 8px; /* 轻微圆角使之不那么生硬 */
-  overflow: hidden;
   margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
   border: 1px solid var(--gray);
-  background: var(--lightgray);
 }
 
 .profile-avatar img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .profile-info h3 {
