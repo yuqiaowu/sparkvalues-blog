@@ -33,9 +33,14 @@ const Profile: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
 Profile.css = `
 .profile {
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 12px;
+  background: var(--light);
 }
 
 .profile-header {
+  text-align: center;
   margin: 0 0 1rem 0;
   font-size: 1.2rem;
   font-family: var(--titleFont);
@@ -45,8 +50,8 @@ Profile.css = `
 .profile-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   padding: 0;
   background: transparent;
 }
@@ -82,7 +87,7 @@ Profile.css = `
 
 .profile-contact {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.5rem;
 }
 
