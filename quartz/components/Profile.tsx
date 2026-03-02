@@ -13,7 +13,6 @@ const Profile: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
           <img src={`${baseDir}/static/avatar.png`} alt="JO_WU Avatar" />
         </div>
         <div class="profile-info">
-          <h3>JO_WU</h3>
           <p class="profile-bio">
             Web3 Product Manager | Quant Trader
             <br />
@@ -60,12 +59,14 @@ Profile.css = `
 }
 
 .profile-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 8px; /* 轻微圆角使之不那么生硬 */
   overflow: hidden;
   margin-bottom: 1rem;
-  border: 2px solid var(--secondary);
+  border: 1px solid var(--gray);
   background: var(--lightgray);
 }
 
