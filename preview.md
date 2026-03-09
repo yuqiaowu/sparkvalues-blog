@@ -1,0 +1,389 @@
+今天体验了几款知名的 Web3 钱包，只注册了一下钱包，走了一下流程，竟然有这么多的区别。
+
+## 🔹 测评概览
+
+| 钱包名称 | 归属/背景 | 技术类型 | 核心亮点 (Product Highlights) | PM 视角 (Market Fit) |
+| :--- | :--- | :--- | :--- | :--- |
+| **MetaMask** | Consensys | **EOA** | **DeFi 门户**。几乎支持所有 EVM 链，插件端用户量全球第一。 | 行业基建，资产沉淀最深。 |
+| **Trust Wallet** | Binance | **EOA** | **移动端首选**。内置多链 Staking，UI 干净，适合小白存币。 | 币安流量转换器，用户基数大。 |
+| **OKX Wallet** | OKX | **EOA + AA** | **功能最全**。率先在交易所钱包里集成 **AA 智能合约**，支持一键跨链。 | “卷王”产品，用户留存极高。 |
+| **Bitget Wallet** | Bitget | **EOA + MPC** | **交易利器**。主打全链 DEX 聚合和行情预警，Swap 体验极快。 | 交易驱动型，抢占活跃交易者。 |
+
+---
+
+## ⚡️ 注册流程体验对比 (Clicks & Experience)
+
+| 钱包名称 | 核心操作流程 | 预估点击次数 | 注册路径反馈 | 综合体验评价 |
+| :--- | :--- | :--- | :--- | :--- |
+| **MetaMask** | 创建 → 协议 → 设置密码 → 答题反诈 → 长按确认 → 抄写助记词 | **8 - 10 次** | 流程线性且强制，不完成备份不让进，显得较“沉重”。 | **及格**。老派作风，安全感足够但毫无惊喜。 |
+| **OKX Wallet** | 创建 → 扫码/指纹 → Google 通行密钥（重复弹窗）→ 备份提醒 | **7 - 12 次** | 存在疑似 Bug 的重复点击（白色弹窗），且系统确认极多。 | **中等**。功能强但流程“绕”，跳转和确认弹窗容易让人懵。 |
+| **Bitget Wallet** | 创建 → 设置 PIN 码 → 等待后台运算 → 成功（烟花） | **3 - 4 次** | 极速路径，把最难的“备份”后置，主打先让用户“进来”。 | **优秀**。情绪价值最高，烟花动效对新手非常有鼓励作用。 |
+| **Trust Wallet** | 创建 → 选择指纹 → 确认指纹 → 成功引导 | **4 - 5 次** | “一气呵成”，指纹验证流程极简，没有任何重复确认。 | **最佳**。流畅度最高，完美利用了系统原生的生物识别体验。 |
+
+---
+
+## 📸 具体操作流程与过程感受
+
+### 一、 MetaMask (小狐狸)
+
+之前就有注册过，因为是第一次注册，好像也没有觉得很繁琐（因为觉得可能区块链的东西，跟钱有关的东西就是这么繁琐的）。
+
+> [!tip] 关于助记词
+> 保存了一个 12 个字符的助记词在手机上（虽然它强烈建议不要这么做，但是如果手抄的话，麻烦不说我更不知道最后会放到哪里去了）。
+
+今天又上去看了下，发现这个钱包它注册了之后就找不到地方删除。
+
+
+![Pasted image 20260302115244.png](https://blog.sparkvalues.com/Pasted-image-20260302115244.png)
+
+
+
+> [!question] 助记词安全疑问
+> 助记词是不能改的对吗？如果助记词暴露了，要怎么处理呢？把这个钱包里的钱转移到安全的钱包，再把这个钱包删掉？可以再次查看助记词，但是要通过：
+
+
+![Pasted image 20260302115358.png](https://blog.sparkvalues.com/Pasted-image-20260302115358.png)
+
+ 
+
+
+![Pasted image 20260302115430.png](https://blog.sparkvalues.com/Pasted-image-20260302115430.png)
+
+
+
+
+![Pasted image 20260302003319.png](https://blog.sparkvalues.com/Pasted-image-20260302003319.png)
+
+ 
+
+
+![Pasted image 20260302003355.png](https://blog.sparkvalues.com/Pasted-image-20260302003355.png)
+
+
+
+
+![Pasted image 20260302010409.png](https://blog.sparkvalues.com/Pasted-image-20260302010409.png)
+
+
+
+感觉颇为繁琐啊，但是也是反诈的必要步骤吧。答完题还要继续输入密码，真是密码恐惧症了：
+
+
+
+![Pasted image 20260302010534.png](https://blog.sparkvalues.com/Pasted-image-20260302010534.png)
+
+
+
+确认完密码还要长按确定协议 = =
+
+
+
+![Pasted image 20260302010629.png](https://blog.sparkvalues.com/Pasted-image-20260302010629.png)
+
+
+
+终于可以看到助记词的真身了，提供文本和 QR 两个选项：
+
+
+![Pasted image 20260302013451.png](https://blog.sparkvalues.com/Pasted-image-20260302013451.png)
+
+
+
+---
+
+### 二、 OKX Wallet
+
+
+
+![Pasted image 20260301000304.png](https://blog.sparkvalues.com/Pasted-image-20260301000304.png)
+
+
+
+看见密码就会心头一紧，所以选择生物识别，用的是 Mac 的指纹。
+
+
+![Pasted image 20260301000345.png](https://blog.sparkvalues.com/Pasted-image-20260301000345.png)
+
+
+
+> [!warning] 交互槽点
+* 很诡异的是按了之后又冒出来一个白色的界面，但是内容是一模一样的，又要再点一遍（有可能是 Bug?）。
+
+
+![Pasted image 20260301000640.png](https://blog.sparkvalues.com/Pasted-image-20260301000640.png)
+
+
+* 生物识别还要选择类型，期间跳了很多遍弹窗，让我有点懵逼。
+
+> [!info] 背后逻辑
+> 发现它可能第一次是确认使用 Google 来创建通行密码，第二次是 Google 要确认通过创建密码指纹来登录浏览器扩展。
+
+
+
+![Pasted image 20260301003022.png](https://blog.sparkvalues.com/Pasted-image-20260301003022.png)
+
+
+
+
+![Pasted image 20260301002418.png](https://blog.sparkvalues.com/Pasted-image-20260301002418.png)
+
+ 
+
+
+![Pasted image 20260301002714.png](https://blog.sparkvalues.com/Pasted-image-20260301002714.png)
+
+
+
+
+![Pasted image 20260301235047.png](https://blog.sparkvalues.com/Pasted-image-20260301235047.png)
+
+
+
+记录助记词和确认助记词是放在整个注册流程中的，虽然也可以跳过，但是“备份助记词”这个按钮太显眼了。
+
+
+![Pasted image 20260302000121.png](https://blog.sparkvalues.com/Pasted-image-20260302000121.png)
+
+
+
+OKX wallet 在助记词上还是非常谨慎的，即是点了助记词区域也不会完全显示助记词。可能这种谨慎的手法也会让注册的人重视助记词这个事情！
+
+
+![Pasted image 20260302000409.png](https://blog.sparkvalues.com/Pasted-image-20260302000409.png)
+
+
+
+> [!quote] 感悟
+> Web3 听起来是个很现代和未来的行业，但是最基础的密码却还要用手抄的方式……
+
+
+
+![Pasted image 20260301002215.png](https://blog.sparkvalues.com/Pasted-image-20260301002215.png)
+
+
+OK，终于可以看到钱包的界面了。
+
+
+![Pasted image 20260302013810.png](https://blog.sparkvalues.com/Pasted-image-20260302013810.png)
+
+
+
+---
+
+### 三、 Bitget Wallet
+
+同样也是浏览器插件，但它不会像 OKX 那样强制链接 OKX 的网站。
+
+
+![Pasted image 20260302114643.png](https://blog.sparkvalues.com/Pasted-image-20260302114643.png)
+
+
+
+> [!caution] 术语门槛
+> 设置 PIN 码，刚看到这个词的时候感觉有点懵，对于非专业的人来说，PIN 码这个词还挺陌生的，其实为什么不说密码呢？
+
+
+![Pasted image 20260302115150.png](https://blog.sparkvalues.com/Pasted-image-20260302115150.png)
+
+
+
+创建密码需要很长时间吗？竟然也会有一个过渡页面，停留时间还比较长。
+
+
+![Pasted image 20260302115933.png](https://blog.sparkvalues.com/Pasted-image-20260302115933.png)
+
+
+
+整个注册过程还是非常迅速的，没有繁琐的确认流程，没有助记词，创建成功还有**烟花动效**，这对新手来讲还是挺有鼓励作用的！
+
+
+
+![Pasted image 20260302120226.png](https://blog.sparkvalues.com/Pasted-image-20260302120226.png)
+
+
+
+把繁琐的确认助记词的流程**滞后处理**了：
+
+
+
+![Pasted image 20260302121640.png](https://blog.sparkvalues.com/Pasted-image-20260302121640.png)
+
+
+
+选择备份助记词，出现人的指导，感觉体验会比较亲切：
+
+
+
+![Pasted image 20260302122316.png](https://blog.sparkvalues.com/Pasted-image-20260302122316.png)
+
+
+
+
+![Pasted image 20260302123313.png](https://blog.sparkvalues.com/Pasted-image-20260302123313.png)
+
+
+
+
+![Pasted image 20260302123346.png](https://blog.sparkvalues.com/Pasted-image-20260302123346.png)
+
+
+
+
+![Pasted image 20260302125441.png](https://blog.sparkvalues.com/Pasted-image-20260302125441.png)
+
+
+
+引导视频之后是输入密码，不过注册的时候说的是“PIN 码”，现在又是密码，感觉名字不统一：
+
+
+
+![Pasted image 20260302130513.png](https://blog.sparkvalues.com/Pasted-image-20260302130513.png)
+
+
+
+> [!check] 细节关怀
+> 再一次的谨慎，确认周边无人。
+
+
+
+![Pasted image 20260302130600.png](https://blog.sparkvalues.com/Pasted-image-20260302130600.png)
+
+
+
+直接可以看到所有的助记词，不像 OKX 需要点一个看一个。
+
+
+
+![Pasted image 20260302131036.png](https://blog.sparkvalues.com/Pasted-image-20260302131036.png)
+
+ 
+
+
+![Pasted image 20260302132234.png](https://blog.sparkvalues.com/Pasted-image-20260302132234.png)
+
+
+
+同样的有一个庆祝动效页面：
+
+
+
+![Pasted image 20260302132353.png](https://blog.sparkvalues.com/Pasted-image-20260302132353.png)
+
+
+
+同样的， Bitget 的钱包也有增删改的功能：
+
+
+
+![Pasted image 20260302132947.png](https://blog.sparkvalues.com/Pasted-image-20260302132947.png)
+
+
+
+---
+
+### 四、 Trust Wallet
+
+币安收购的钱包，和 OKX 一样，下载完成后会链接到它的网页：
+
+
+![Pasted image 20260302134324.png](https://blog.sparkvalues.com/Pasted-image-20260302134324.png)
+
+
+
+选择安全方式，可以选择指纹和密码两种方式，我更喜欢指纹。
+
+
+![Pasted image 20260302134433.png](https://blog.sparkvalues.com/Pasted-image-20260302134433.png)
+
+
+
+
+![Pasted image 20260302134632.png](https://blog.sparkvalues.com/Pasted-image-20260302134632.png)
+
+
+
+> [!check] 核心优点
+> 指纹的注册和验证都一气呵成，没有像 OKX 那样的反复确认流程。
+
+
+![Pasted image 20260302134737.png](https://blog.sparkvalues.com/Pasted-image-20260302134737.png)
+
+
+
+最后一样有庆祝过程和科普引导：点击打开我的钱包之后才出现侧边栏。
+
+
+![Pasted image 20260302135214.png](https://blog.sparkvalues.com/Pasted-image-20260302135214.png)
+
+
+
+备份助记词的流程同样是被后置的，以提示框的方式出现在侧边栏。
+
+
+![Pasted image 20260302135413.png](https://blog.sparkvalues.com/Pasted-image-20260302135413.png)
+
+
+
+
+![Pasted image 20260302135714.png](https://blog.sparkvalues.com/Pasted-image-20260302135714.png)
+
+
+
+> [!warning] 安全细节
+> 直接展示助记词，甚至可以直接截图和复制。
+
+
+![Pasted image 20260302135817.png](https://blog.sparkvalues.com/Pasted-image-20260302135817.png)
+
+
+
+确认的方式是全量的。不过这个似乎是更合理的，因为如果是之前的钱包只抽查几个，并不能完全保证用户把所有词都保存正确。
+
+
+![Pasted image 20260302140206.png](https://blog.sparkvalues.com/Pasted-image-20260302140206.png)
+
+
+
+---
+
+## 🏆 总结与深度拆解
+
+虽然 AI 给这些钱包分了很多类，有 EOA、AA、MPC 等，但体验下来会发现，这不仅是产品风格的不同，更是底层逻辑的博弈。
+
+1. **MetaMask (老派的 EOA)**：Web3 的“重工业”风格。指纹解锁在这里只是 App 的“门禁”，核心依然是那张助记词小纸条。换了手机，刷脸是进不去的，必须手敲助记词。
+2. **Trust Wallet (懂用户的 EOA)**：产品经理非常厉害。通过优化 UI、后置复杂流程，利用手机硬件加密让你感觉像在用 Web2 银行 App。但本质没变：助记词依然是你的唯一命根子。
+3. **Bitget Wallet (极致性价比的 MPC)**：注册时的“长过渡页面”其实是在后台进行复杂的分布式密钥生成（MPC 技术）。它把私钥“碎掉”分存在三处，省去了记单词的痛苦。在链上它和 EOA 一样便宜，但体验又很智能。
+4. **OKX Wallet (智能化的 AA)**：它是真正写在链上的合约。虽然转账的“起步价”比 EOA 贵一些，但它最灵活。你可以用 USDT 付 Gas，甚至可以实现“社交恢复”。
+
+### 🔍 Web3 钱包注册体验对比 (优点 vs 槽点)
+
+| 钱包名称 | 闪光点 (Pros) | 槽点 (Cons) | 核心体感 |
+| :--- | :--- | :--- | :--- |
+| **MetaMask** | 助记词查看提供文本/QR双选项；流程扎实。 | **找不着删除入口**；“密码恐惧症”；强制答题。 | 粗犷、老派、繁琐。 |
+| **OKX Wallet** | 助记词区域点一个看一个（严谨）。 | **重复弹窗**；刷指纹后无限循环确认. | 谨慎到有些懵逼。 |
+| **Bitget Wallet** | **成功烟花特效**；助记词流程后置。 | **术语不统一**（PIN vs 密码）；注册过渡慢。 | 亲切、快速、有鼓励感。 |
+| **Trust Wallet** | 指纹绑定一气呵成；**全量验证**（合理）。 | **安全性做得不够重**；允许截图助记词。 | 现代、顺滑。 |
+
+---
+
+### 💡 产品经理 (PM) 视角下的五点感触
+
+1. **MetaMask 的“长按确认”**：在多次点击确认之后还要使用这种非标准交互，确实让人觉得很繁琐。
+2. **OKX 的“无限嵌套弹窗”**：这是目前 AA 钱包接入 Passkey 时的通病，导致用户“不停地点点点”，这种**失控感**是新手流失的主因。
+3. **Bitget 的“专业术语门槛”**： “PIN 码”这个词，对于非专业人士，**“密码”**带来的安全感远高于它。
+4. **关于“全量验证”**：Trust Wallet 的做法更合理。大部钱包只抽查，而全量验证才是对资产真正的负责。
+5. **关于“流程后置”**：Bitget 和 Trust 做的很好. 遵循了产品设计里的“先让用户爽，再让用户干活”的原则。
+
+---
+
+### ⛽️ 后话：关于 Gas 费和产品套路
+
+作为 PM，我也在思考为什么有些钱包转账是“免费”的，而有些却贵一点：
+*   **链上原始成本**：EOA = MPC < AA。AA 因为要跑智能合约代码，天生就贵几倍。
+*   **用户感受成本**：MPC 往往显得最便宜。这其实是**钱包公司的补贴策略**。因为 MPC 的“起步价”低，公司补得起。而 AA 账号因为“起步价”太贵，公司想补也补不动。
+
+> [!important] 核心总结
+> * **EOA/MPC** 是“用最便宜的票价，坐上了商务舱的座椅”；
+> * **AA** 是“直接包了一架私人飞机，除了贵，没别的问题”。
+> 
+> 对于我这种新手，目前感觉 **MPC 这种兼顾了地板价和智能操作的模式**，可能是目前的最佳平衡点。
