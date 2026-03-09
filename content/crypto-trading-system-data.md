@@ -6,6 +6,7 @@ tags:
   - Quant
   - Crypto
   - System_Design
+pinned: true
 permalink: /posts/crypto-trading-system-data/
 ---
 项目体验地址：[agent.sparkvalues.com](https://agent.sparkvalues.com)
