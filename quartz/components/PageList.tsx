@@ -32,6 +32,8 @@ export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
 
 export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): SortFn {
   return (f1, f2) => {
+    if (f1.frontmatter?.pinned && !f2.frontmatter?.pinned) return -1
+    if (!f1.frontmatter?.pinned && f2.frontmatter?.pinned) return 1
     // Sort folders first
     const f1IsFolder = isFolderPath(f1.slug ?? "")
     const f2IsFolder = isFolderPath(f2.slug ?? "")
