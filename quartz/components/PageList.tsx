@@ -10,6 +10,8 @@ export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
 export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
   return (f1, f2) => {
+    if (f1.frontmatter?.pinned && !f2.frontmatter?.pinned) return -1
+    if (!f1.frontmatter?.pinned && f2.frontmatter?.pinned) return 1
     // Sort by date/alphabetical
     if (f1.dates && f2.dates) {
       // sort descending

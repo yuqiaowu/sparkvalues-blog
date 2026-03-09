@@ -6,6 +6,7 @@ tags:
   - defi
   - product
   - experience
+pinned: true
 permalink: /posts/web3-entry-barrier/
 ---
 
